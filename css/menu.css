@@ -1,0 +1,4 @@
+.menu-item p:hover {
+  cursor: pointer;
+  background-color: #F0EFEF;
+}

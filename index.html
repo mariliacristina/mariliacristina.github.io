@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./css/profile-picture.css">
+<link rel="stylesheet" href="./css/menu.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </style>
@@ -16,60 +18,47 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
   <!-- The Grid -->
   <div class="w3-row-padding">
-  
+
     <!-- Left Column -->
     <div class="w3-third">
-    
+
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="/images/marilia-circle.png" style="width:100%" alt="Profile Image">
+          <img id="profile-picture" src="./images/marilia-circle.png" alt="Profile Image">
           <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Marília Viana</h2>
+            <h3>Marília Cristina do Carmo Viana</h3>
           </div>
         </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Designer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>London, UK</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
-          <hr>
 
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Adobe Photoshop</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
-          </div>
-          <p>Photography</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
-          </div>
-          <p>Illustrator</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-          </div>
-          <p>Media</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-          </div>
-          <br>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
-          </div>
-          <p>Spanish</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
-          </div>
-          <p>German</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-          </div>
-          <br>
+        <div class="w3-container menu-item" data-open="#about-me">
+          <p onclick="showSection(event)"><i class="fa fa-certificate fa-fw w3-margin-right w3-large w3-text-teal"></i>Sobre mim</p>
         </div>
+
+        <div class="w3-container menu-item" data-open="#experience">
+          <p onclick="showSection(event)"><i class="fa fa-suitcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Experiência</p>
+        </div>
+
+        <div class="w3-container menu-item" data-open="#education">
+          <p onclick="showSection(event)"><i class="fa fa-book fa-fw w3-margin-right w3-large w3-text-teal"></i>Educação</p>
+        </div>
+
+        <div class="w3-container menu-item" data-open="#skills">
+          <p onclick="showSection(event)"><i class="fa fa-asterisk fa-fw w3-margin-right w3-large w3-text-teal"></i>Habilidades</p>
+        </div>
+
+        <div class="w3-container menu-item" data-open="#languages">
+          <p onclick="showSection(event)"><i class="fa fa-globe fa-fw w3-margin-right w3-large w3-text-teal"></i>Idiomas</p>
+        </div>
+
+        <div class="w3-container menu-item" data-open="#awards">
+          <p onclick="showSection(event)"><i class="fa fa-star fa-fw w3-margin-right w3-large w3-text-teal"></i>Prêmios e Títulos</p>
+        </div>
+
+        <div class="w3-container menu-item" data-open="#contact-me">
+          <p onclick="showSection(event)"><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>Contatos</p>
+        </div>
+
+
       </div><br>
 
     <!-- End Left Column -->
@@ -77,8 +66,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
     <!-- Right Column -->
     <div class="w3-twothird">
-    
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom section" id="about-me">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Sobre Mim</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity">Bacharel com distinção acadêmica Summa Cum Laude em Ciência da Computação na Universidade Federal do Ceará - Campus Russas. Atualmente é mestranda em Ciência da Computação na Universidade Federal do Ceará - campus do Pici, com ênfase em Otimização Combinatória.</h5>
+          <br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom section" id="experience">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Experiência</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Estágio / Desenvolvimento Web</b></h5>
@@ -100,12 +97,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Iniciação Científica / Inteligência Artificial</b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mai 2016 - Fev 2017</h6>
-          <p>Bolsista financiada pela FUNCAP (Fundação Cearense de Apoio ao Desenvolvimento Científico e Tecnológico) no projeto de pesquisa: Métodos Formais  para  Planejamento  em  Inteligência  Artificial,  na  Universidade Federal do Ceará - campus Russas.</p><br>
+          <p>Bolsista financiada pela FUNCAP (Fundação Cearense de Apoio ao Desenvolvimento Científico e Tecnológico) no projeto de pesquisa: Métodos Formais  para  Planejamento  em  Inteligência  Artificial,  na  Universidade Federal do Ceará - campus Russas.</p>
+          <br>
         </div>
       </div>
 
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Educação</h2>
+      <div class="w3-container w3-card w3-white w3-margin-bottom section" id="education">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-book fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Educação</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Mestrado</b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019 - <span class="w3-tag w3-teal w3-round">Presente</span></h6>
@@ -116,30 +114,115 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <h5 class="w3-opacity"><b>Graduação</b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2015 - 2018</h6>
           <p>Graduação em Ciência da Computação na Universidade Federal do Ceará - campus Russas.</p>
-          <hr>
+          <br>
         </div>
       </div>
 
+      <div class="w3-container w3-card w3-white w3-margin-bottom section" id="skills">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-asterisk fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Habilidades</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Linguagens de Programação</b></h5>
+          <h6 class="w3-text-teal">
+            <ul>
+              <li>Java</li>
+              <li>Python</li>
+            </ul>
+          </h6>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Ferramentas e Tecnologias</b></h5>
+          <h6 class="w3-text-teal">
+            <ul>
+              <li>GitHub</li>
+              <li>Trello</li>
+              <li>Scrum</li>
+              <li>PostgreSQL</li>
+              <li>LaTeX</li>
+            </ul>
+          </h6>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Competências Interpessoais</b></h5>
+          <h6 class="w3-text-teal">
+            <ul>
+              <li>Responsabilidade</li>
+              <li>Comunicação</li>
+              <li>Trabalho em equipe</li>
+              <li>Proatividade</li>
+              <li>Resolução de problemas</li>
+              <li>Rápido aprendizado</li>
+            </ul>
+          </h6>
+          <br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom section" id="languages">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-globe fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Idiomas</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Inglês</b></h5>
+          <h6 class="w3-text-teal">
+            <ul>
+              <li>Lê Bem</li>
+              <li>Escreve Razoavelmente</li>
+              <li>Compreende Razoavelmente</li>
+              <li>Fala Pouco</li>
+            </ul>
+          </h6>
+          <p>Prestou o exame de proficiência em inglês TOEFL-ITP em 2018, obtendo 557/677 pontos, sendo enquadrada no nível intermediário elevado (B2).</p>
+          <br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom section" id="awards">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-star fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Prêmios e Títulos</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Distinção Acadêmica</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019</h6>
+          <p>Distinção acadêmica Summa Cum Laude, Universidade Federal do Ceará - Campus Russas.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Aluna Destaque</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019</h6>
+          <p>Aluna destaque da turma de 2018.2 do curso Bacharelado em Ciência da Computação na Universidade Federal do Ceará - Campus Russas, Sociedade Brasileira de Computação (SBC).</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Menção Honrosa</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2016</h6>
+          <p>Menção honrosa nos I Encontros Universitários (Melhores trabalhos) da Universidade Federal do Ceará - Campus Russas.</p>
+          <br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom section" id="contact-me">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-phone fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Contatos</h2>
+        <div class="w3-container">
+          <div class="w3-container">
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>mariliacristinacarmo@gmail.com</p>
+          <p><i class="fa fa-linkedin fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="http://linkedin.com/in/marilia-viana-0629b8160">http://linkedin.com/in/marilia-viana-0629b8160</a></p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="http://lattes.cnpq.br/2422700976452651">http://lattes.cnpq.br/2422700976452651</a></p>
+        </div>
+      </div>
+
+
     <!-- End Right Column -->
     </div>
-    
+
   <!-- End Grid -->
   </div>
-  
+
   <!-- End Page Container -->
 </div>
 
 <footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="./scripts/menu.js"></script>
 </body>
 </html>
-
