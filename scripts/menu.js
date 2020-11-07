@@ -1,13 +1,13 @@
-// Hides all the sections and shows only the selected one.
+// hides all the sections and shows only the selected one.
 function showSection(event) {
   const p = event.currentTarget;
 
-  // hide all the sections
+  // hides all the sections
   $('.section').hide();
 
-  // get the selected section id
-  const section = p.parentNode.dataset.open;
+  // gets the selected section id
+  const section = p.dataset.open;
 
-  // show the selected section
+  // shows the selected section
   $(section).show();
 }
